@@ -24,5 +24,4 @@ attr_accessor :till, :drinks
     end
   end
 
-
 end
