@@ -13,9 +13,14 @@ attr_accessor :till, :drinks
   end
 
   def take_payment(value)
-    @till += value.to_f.round(2)
+    @till += value
+    @till.round(2)
   end
 
+  # def transaction(value, customer)
+  #   take_payment(value)
+  #   customer.make_payment(value)
+  # end
   def remove_drink(name)
     # loop to find Vodka
     # then remove Vodka
@@ -23,5 +28,29 @@ attr_accessor :till, :drinks
       @drinks.delete(drink) if drink == name
     end
   end
+
+  def check_age(age)
+    if age >= 18
+      p "What would you like to drink?"
+      return true
+    else
+      p "Sorry I can't serve you"
+      return false
+
+    end
+  end
+
+  def check_sobriety(sobriety)
+    if sobriety < 10
+      p "What would you like to drink?"
+      return true
+    else
+      p "Sorry I can't serve you alcohol, you pisshead."
+      return false
+
+    end
+  end
+
+
 
 end
